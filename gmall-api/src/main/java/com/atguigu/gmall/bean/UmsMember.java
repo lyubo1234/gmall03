@@ -1,26 +1,25 @@
-package com.atguigu.gmall.gmall.user.bean;
-
+package com.atguigu.gmall.bean;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.util.Date;
 
-
-public class UmsMember {
+public class UmsMember implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id; //主键用来过滤
-    private String memberLevelId;  //外键用来搜索
+    private String id;
+    private String memberLevelId;
     private String username;
     private String password;
     private String nickname;
     private String phone;
     private int status;
-    private Date createTime;//创建时间
+    private Date createTime;
     private String icon;
-    private int gender;//性别
+    private int gender;
     private Date birthday;
     private String city;
     private String job;

@@ -1,7 +1,9 @@
 package com.atguigu.gmall.gmall.user.controller;
 
-import com.atguigu.gmall.gmall.user.bean.UmsMember;
-import com.atguigu.gmall.gmall.user.service.UserService;
+
+import com.atguigu.gmall.bean.UmsMember;
+import com.atguigu.gmall.bean.UmsMemberReceiveAddress;
+import com.atguigu.gmall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,14 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
+
+    @RequestMapping("findUserById")
+    @ResponseBody
+    public  List<UmsMemberReceiveAddress> findById(String memberId){
+        List<UmsMemberReceiveAddress> id = userService.getById(memberId);
+
+        return id;
+    }
 
     @RequestMapping("findUserAll")
     @ResponseBody
